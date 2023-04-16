@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 
 const Dropdown = ({ activetab }) => {
   const router = useRouter();
-  const currentPage = router.pathname;
-  const [activePageName, setActivePageName] = useState(null);
+  const [activePageName, setActivePageName] = useState("education");
   const [isActive, setIsActive] = useState(false);
   const dropMenu = [
     {
@@ -33,12 +32,10 @@ const Dropdown = ({ activetab }) => {
     <>
       <div className="main-dropdown">
         <div onClick={() => handleDrop()} className="head-dropdown">
-          click to Open
+          {activePageName ? <div>{activePageName}</div> : <p>click to open</p>}
         </div>
         <div className={isActive ? "body-dropdown" : "not-body-dropdown"}>
-          <h2>dropdown</h2>
           <ul>
-            {activePageName ? <li>{activePageName}</li> : null}
             {dropMenu.map((item) =>
               item.name != activePageName ? (
                 <li>
@@ -48,7 +45,6 @@ const Dropdown = ({ activetab }) => {
                       query: { pathIs: item.name },
                     }}
                     as={`${item.name}`}
-                    // className={currentPage === "/education" ? "active" : "nonActive"}
                   >
                     {item.name}
                   </Link>

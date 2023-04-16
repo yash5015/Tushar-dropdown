@@ -7,7 +7,7 @@ const School = () => {
   const ActiveDrop = router.query.pathIs;
   return (
     <>
-      <Dropdown activetab={ActiveDrop} />
+      <Dropdown activetab={ActiveDrop !== "/" ? "school" : ActiveDrop} />
       <div>school {ActiveDrop}</div>
     </>
   );
