@@ -34,7 +34,11 @@ const Dropdown = ({ activetab }) => {
         <div onClick={() => handleDrop()} className="head-dropdown">
           {activePageName ? <div>{activePageName}</div> : <p>click to open</p>}
         </div>
-        <div className={isActive ? "body-dropdown" : "not-body-dropdown"}>
+        <div
+          className={
+            isActive ? "body-dropdown duration-75" : "not-body-dropdown "
+          }
+        >
           <ul>
             {dropMenu.map((item) =>
               item.name != activePageName ? (

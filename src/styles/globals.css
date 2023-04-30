@@ -22,3 +22,21 @@
 .not-body-dropdown {
   display: none;
 }
+
+.boxRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  width: 120px;
+  height: 120px;
+  background: rgb(125, 185, 237);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+.activeCard {
+  background: rgb(232, 100, 100);
+}
