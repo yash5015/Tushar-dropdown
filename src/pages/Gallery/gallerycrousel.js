@@ -15,12 +15,18 @@ const Crousel = ({ images, index, isShown }) => {
       window.removeEventListener("keydown", handleEsc);
     };
   });
-
+  // _3lwW_ _1oKnM
+  // console.log(disableBtn);
   function CustomMinIcon() {
     return (
-      <div>
+      <div
+        onClick={isShown}
+        style={{
+          position: "absolute",
+          right: "20px",
+        }}
+      >
         <h1
-          onClick={isShown}
           style={{
             color: "white",
           }}
